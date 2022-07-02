@@ -1,0 +1,66 @@
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: flask-webapp-color
+  namespace: python-color-app-test
+  labels:
+    app: flask-webapp-color
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/SlitiBrahim/flask-webapp-color
+      ref: test
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: flask-webapp-color:latest
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: flask-webapp-color
+  namespace: python-color-app-staging
+  labels:
+    app: flask-webapp-color
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/SlitiBrahim/flask-webapp-color
+      ref: staging
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: flask-webapp-color:latest
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: flask-webapp-color
+  namespace: python-color-app-prod
+  labels:
+    app: flask-webapp-color
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/SlitiBrahim/flask-webapp-color
+      ref: master
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: flask-webapp-color:latest
