@@ -5,7 +5,7 @@ metadata:
   labels:
     app: python-color-app
   name: python-color-app
-  namespace: python-color-app-test
+  namespace: python-color-app-staging
 spec:
   ports:
   - port: 8080

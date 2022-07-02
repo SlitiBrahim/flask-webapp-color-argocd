@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/SlitiBrahim/flask-webapp-color-argocd
-    path: test
+    path: staging
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: python-color-app-test
+    namespace: python-color-app-staging
