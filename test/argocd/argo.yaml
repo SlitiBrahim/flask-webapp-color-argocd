@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/SlitiBrahim/flask-webapp-color-argocd
-    path: /
+    path: test
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
