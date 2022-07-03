@@ -19,6 +19,6 @@ spec:
         app: python-color-app
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/python-color-app-staging/flask-webapp-color:latest
+      - image: image-registry.openshift-image-registry.svc:5000/python-color-app-staging/flask-webapp-color:2
         name: python-color-app
         resources: {}
