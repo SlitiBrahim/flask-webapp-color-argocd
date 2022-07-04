@@ -20,13 +20,3 @@ spec:
     name: python-color-app
     weight: 100
   wildcardPolicy: None
-status:
-  ingress:
-  - conditions:
-    - lastTransitionTime: "2022-07-02T18:33:22Z"
-      status: "True"
-      type: Admitted
-    host: color-test-python-color-app-test.apps.ocp2.feesh.ch
-    routerCanonicalHostname: router-default.apps.ocp2.feesh.ch
-    routerName: default
-    wildcardPolicy: None
