@@ -1,0 +1,33 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  labels:
+    app: python-color-app
+    app.kubernetes.io/instance: python-color-app-prod
+  name: color-prod
+  namespace: python-color-app-prod
+spec:
+  host: color-prod-python-color-app-prod.apps.ocp2.feesh.ch
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: python-color-app
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: "2022-07-04T08:17:33Z"
+      status: "True"
+      type: Admitted
+    host: color-prod-python-color-app-prod.apps.ocp2.feesh.ch
+    routerCanonicalHostname: router-default.apps.ocp2.feesh.ch
+    routerName: default
+    wildcardPolicy: None
+    
